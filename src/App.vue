@@ -7,10 +7,19 @@
     <button @click.prevent="increment">Incrémenter le compteur</button>
     <h2>Counter x2: {{doubledCounter}}</h2>
   </div>
+
   <button @click="toggleDiv">Afficher la div</button>
   <div class="div" v-if="isDivDisplayed">Une div</div>
+
   <input type="text" v-model="message">
   <p>{{ message }}</p>
+
+  <ul>
+    <li v-for="(item, index) in list" :key="index">
+      {{ item }}
+    </li>
+  </ul>
+
 </template>
 
 <script>
@@ -39,13 +48,16 @@ export default {
       isDivDisplayed.value = !isDivDisplayed.value
     }
 
+    const list = ref(['un', 'deux', 'trois'])
+
     return {
       message,
       counter,
       increment,
       doubledCounter,
       isDivDisplayed,
-      toggleDiv
+      toggleDiv,
+      list
     }
   }
 }

@@ -9,6 +9,8 @@
   </div>
   <button @click="toggleDiv">Afficher la div</button>
   <div class="div" v-if="isDivDisplayed">Une div</div>
+  <input type="text" v-model="message">
+  <p>{{ message }}</p>
 </template>
 
 <script>
@@ -19,7 +21,7 @@ export default {
     MyParagraphe
   },
   setup () {
-    const message = ref('Un beau mesage oui <3')
+    const message = ref('Un beau message oui <3')
 
     const counter = ref(0)
 
